@@ -24,6 +24,7 @@
 		<string>qqmap</string>
 		<string>here-location</string>
 		<string>tomtomgo</string>
+		<string>instagram</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>

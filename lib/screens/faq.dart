@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pallifind/widgets/expandable.dart';
-import 'package:pallifind/widgets/h1.dart';
 import 'package:pallifind/widgets/quote.dart';
 import 'package:pallifind/widgets/subtext.dart';
 

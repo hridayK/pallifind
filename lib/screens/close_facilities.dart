@@ -22,7 +22,6 @@ class _NearestFacilitiesViewState extends State<NearestFacilitiesView> {
 
   Future<List<Facility>> getNearest() async {
     List<Facility> facilities = [];
-    print(widget.facilitiyData.length);
 
     widget.facilitiyData.forEach((element) {
       facilities.add(Facility(data: element));
@@ -61,7 +60,7 @@ class _NearestFacilitiesViewState extends State<NearestFacilitiesView> {
           if (snapshot.hasData) {
             return Center(
               child: ListView.builder(
-                itemCount: 10,
+                itemCount: 5,
                 itemBuilder: (context, index) {
                   return SearchElement(elementData: snapshot.data![index].data);
                 },
