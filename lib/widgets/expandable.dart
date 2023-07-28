@@ -35,11 +35,16 @@ class _ExpandableWidgetState extends State<ExpandableWidget> {
                     color: Colors.grey,
                   ),
                   SizedBox(width: 10),
-                  Text(
-                    widget.title,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
+                  SizedBox(
+                    width: MediaQuery.sizeOf(context).width * 0.8,
+                    child: Text(
+                      widget.title,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                      softWrap: true,
+                      maxLines: 2,
                     ),
                   ),
                 ],
@@ -48,7 +53,11 @@ class _ExpandableWidgetState extends State<ExpandableWidget> {
             SizedBox(width: 10),
           ],
         ),
-        if (isExpanded) widget.content,
+        if (isExpanded)
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: widget.content,
+          ),
       ],
     );
   }

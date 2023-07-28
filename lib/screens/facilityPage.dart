@@ -84,17 +84,20 @@ class FacilityPage extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () async {
                     String search = facility.name ?? "N/A";
-                    search = search.trim().replaceAll(' ', '+');
-                    final Uri uri = Uri.parse("https//www.google.com/");
+                    search = search.trim().replaceAll('&', 'and');
+                    print(search);
+                    final Uri uri =
+                        Uri.parse("https://www.google.com/search?q=$search");
                     if (search != "N/A") {
                       try {
                         await launchUrl(uri);
                       } catch (error) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
-                            content: Text("Error Loading more information"),
+                            content: Text("Cannot launch browser"),
                           ),
                         );
+                        print(error);
                       }
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
