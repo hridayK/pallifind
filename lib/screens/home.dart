@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pallifind/screens/contact.dart';
 import 'package:pallifind/screens/faq.dart';
 import 'package:pallifind/screens/search.dart';
 
@@ -10,12 +11,17 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
   var _selectedIndex = 0;
 
   static const List<Widget> _widgetOptions = <Widget>[
     Faq(),
     Search(),
-    Text('Favorites'),
+    ContactUs(),
   ];
 
   @override
@@ -25,8 +31,10 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text('Pallifind'),
         centerTitle: true,
       ),
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+      body: SingleChildScrollView(
+        child: Center(
+          child: _widgetOptions.elementAt(_selectedIndex),
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -44,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.blue,
+        selectedItemColor: Colors.deepPurple,
         onTap: (index) {
           setState(() {
             _selectedIndex = index;
