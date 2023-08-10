@@ -126,6 +126,25 @@ class ContactUs extends StatelessWidget {
                   width: 50,
                   child: Image.asset('assets/google_forms_icon.png'),
                 ),
+              ),
+              GestureDetector(
+                onTap: () async {
+                  Uri url = Uri.parse(
+                    'mailto:palliativecaregmcm@gmail.com',
+                  );
+                  if (!await launchUrl(url)) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text('Unable to open the google'),
+                      ),
+                    );
+                  }
+                },
+                child: Container(
+                  height: 50,
+                  width: 50,
+                  child: Image.asset('assets/gmail_icon_crop.png'),
+                ),
               )
             ],
           ),
